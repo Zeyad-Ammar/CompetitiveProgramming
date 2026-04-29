@@ -5,8 +5,12 @@ struct SparseTable {
 	int size=0;
 	int ign=-oo;
 
-	SparseTable(vi &vec) {
+	function<int(int,int)> merge;
 
+	SparseTable(vi &vec,function<int(int,int)> mergeFunc,int ignValue) {
+
+		merge=mergeFunc;
+		ign=ignValue;
 		size=sz(vec);
 		n=__lg(size);
 		v=vvi(n+1,vi(size));
@@ -16,9 +20,7 @@ struct SparseTable {
 
 	}
 
-	int merge(int a, int b) {
-		ret max(a,b);
-	}
+
 
 	void build() {
 
@@ -62,3 +64,4 @@ struct SparseTable {
 	}
 
 };
+
