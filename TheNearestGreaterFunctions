@@ -1,0 +1,28 @@
+vi nextGreater(vi &v) {
+	vi ans(sz(v),sz(v));
+	stack<int> s;
+	for (int i=0;i<sz(v);i++) {
+		while (!s.empty()&&v[s.top()]<v[i]) {
+			ans[s.top()] = i;
+			s.pop();
+		}
+		s.push(i);
+	}
+
+	return ans;
+}
+
+vi prvGreater(vi &v) {
+	vi ans(sz(v),-1);
+	stack<int> s;
+	for (int i=sz(v)-1;i>=0;i--) {
+		while (!s.empty()&&v[s.top()]<v[i]) {
+			ans[s.top()] = i;
+			s.pop();
+		}
+		s.push(i);
+	}
+
+	return ans;
+}
+
