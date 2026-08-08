@@ -5,9 +5,9 @@ struct SparseTable {
 	int size=0;
 	int ign=-oo;
 
-	function<int(int,int)> merge;
+	function<int(int,int)> merge;//a delegate that points to the merge operation U want to solve w/ sparse table.
 
-	SparseTable(vi &vec,function<int(int,int)> mergeFunc,int ignValue) {
+	SparseTable(vi &vec,function<int(int,int)> mergeFunc,int ignValue) {// the constructor take the vector U want to build ur ST on it and the merge OP and ignore value 
 
 		merge=mergeFunc;
 		ign=ignValue;
