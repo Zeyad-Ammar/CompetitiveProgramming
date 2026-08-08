@@ -42,7 +42,7 @@ struct SparseTable {
 		return (num>>bit)&1;
 	}
 
-	int query(int l,int r) {
+	int query(int l,int r) {//o(on bits) use it in case the overlap effict the answer of ur operation.
 		int len=r-l+1;
 		int ans=ign;
 		for (int b=0;l<=r;b++) {
@@ -56,7 +56,7 @@ struct SparseTable {
 		return ans;
 	}
 
-	int queryOL(int l,int r) {
+	int queryOL(int l,int r) {//o(1) query in case overlap not effict use it.
 		int len=r-l+1;
 		int pow=__lg(len);
 
