@@ -1,4 +1,4 @@
-vi nextGreater(vi &v) {
+vi nextGreater(vi &v) {//return a vector that strore the next greater idx of each element
 	vi ans(sz(v),sz(v));
 	stack<int> s;
 	for (int i=0;i<sz(v);i++) {
@@ -12,7 +12,7 @@ vi nextGreater(vi &v) {
 	return ans;
 }
 
-vi prvGreater(vi &v) {
+vi prvGreater(vi &v) {//return a vector that store the previous greater idx of each element
 	vi ans(sz(v),-1);
 	stack<int> s;
 	for (int i=sz(v)-1;i>=0;i--) {
