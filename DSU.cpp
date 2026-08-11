@@ -10,7 +10,7 @@ struct dsu
             group[i]=1;
         }
     }
-    int AbsLeader(int i)
+    int find(int i)
     {
         if(parent[i]==i)
         {
